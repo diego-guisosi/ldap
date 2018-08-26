@@ -1,0 +1,1 @@
+It was necessary to cancel the load test, since the JVM got stuck trying to query LDAP

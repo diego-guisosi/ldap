@@ -1,0 +1,52 @@
+Bytes Read from class :3455
+ago 26, 2018 1:13:12 PM com.sun.faban.driver.engine.MasterImpl runBenchmark
+INFO: RunID for this run is : 2
+ago 26, 2018 1:13:12 PM com.sun.faban.driver.engine.MasterImpl runBenchmark
+INFO: Output directory for this run is : /tmp/fhb/2
+ago 26, 2018 1:13:12 PM com.sun.faban.driver.util.Timer idleTimerCheck
+INFO: http_driver1Agent[0]: Performing idle timer check
+ago 26, 2018 1:13:13 PM com.sun.faban.driver.util.Timer idleTimerCheck
+INFO: http_driver1Agent[0]: Idle timer characteristics:
+Accuracy=3,
+min. invocation cost=19,
+med. invocation cost (math)=21.0,
+med. invocation cost (phys)=21,
+avg. invocation cost=20.9231,
+max. invocation cost=571,
+variance of invocation cost=38.7199863899999.
+ago 26, 2018 1:13:16 PM com.sun.faban.driver.engine.AgentImpl run
+INFO: http_driver1Agent[0]: Successfully started 5 driver threads.
+ago 26, 2018 1:13:16 PM com.sun.faban.driver.engine.MasterImpl executeRun
+INFO: Started all threads; run commences in 2984 ms
+ago 26, 2018 1:13:24 PM com.sun.faban.driver.util.Timer$BusyTimerMeter run
+INFO: http_driver1Agent[0]: Performing busy timer check
+ago 26, 2018 1:13:24 PM com.sun.faban.driver.util.Timer$BusyTimerMeter run
+INFO: http_driver1Agent[0]: Busy timer characteristics:
+Accuracy=3,
+min. invocation cost=18,
+med. invocation cost (math)=22.0,
+med. invocation cost (phys)=22,
+avg. invocation cost=23.2705,
+max. invocation cost=4748,
+variance of invocation cost=2253.930729750001.
+ago 26, 2018 1:13:34 PM com.sun.faban.driver.util.Timer$SleepCalibrator run
+INFO: http_driver1Agent[0]: Calibration succeeded. Sleep time deviation: 0.24695081214848144 ms, compensation: 1 ms.
+ago 26, 2018 1:13:34 PM com.sun.faban.driver.engine.MasterImpl executeRun
+INFO: Ramp up completed
+ago 26, 2018 1:13:49 PM com.sun.faban.driver.engine.MasterImpl executeRun
+INFO: Steady state completed
+ago 26, 2018 1:13:54 PM com.sun.faban.driver.engine.MasterImpl executeRun
+INFO: Ramp down completed
+ago 26, 2018 1:13:54 PM com.sun.faban.driver.engine.MasterImpl getDriverMetrics
+INFO: Gathering http_driver1Stats ...
+ago 26, 2018 1:13:54 PM com.sun.faban.driver.engine.MasterImpl generateReports
+INFO: Printing Summary report ...
+ago 26, 2018 1:13:54 PM com.sun.faban.driver.engine.MasterImpl generateReports
+INFO: Summary finished. Now printing detail ...
+ago 26, 2018 1:13:54 PM com.sun.faban.driver.engine.MasterImpl generateReports
+INFO: Detail finished. Results written to /tmp/fhb/2.
+ops/sec: 7606,267
+% errors: 0.0
+avg. time: 0,001
+max time: 0,036
+90th %: 0,005
