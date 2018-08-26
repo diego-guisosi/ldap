@@ -1,1 +1,0 @@
-Faban was not able to finish the load test with this configuration
