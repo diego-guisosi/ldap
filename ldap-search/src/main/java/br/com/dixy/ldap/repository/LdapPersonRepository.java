@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.NamingEnumeration;
-import javax.naming.NamingException;
 import javax.naming.directory.Attributes;
 import javax.naming.directory.SearchResult;
 
@@ -30,13 +29,10 @@ public class LdapPersonRepository {
 			NamingEnumeration<?> result = adapter.search("ou=people,o=DixyCorporation,dc=example,dc=com",
 					"(objectClass=person)");
 			return extractPeopleFrom(result);
-		} catch (Exception e) {
-			LOG.error(e.getMessage(), e);
-			throw new RuntimeException("Unable to find all people", e);
 		}
 	}
 
-	private List<Person> extractPeopleFrom(NamingEnumeration<?> result) throws NamingException {
+	private List<Person> extractPeopleFrom(NamingEnumeration<?> result) {
 		List<Person> people = new ArrayList<>();
 		while (result.hasMoreElements()) {
 			Person person = extractPersonFrom(result.nextElement());
@@ -45,12 +41,21 @@ public class LdapPersonRepository {
 		return people;
 	}
 
-	private Person extractPersonFrom(Object element) throws NamingException {
+	private Person extractPersonFrom(Object element) {
 		SearchResult searchResult = (SearchResult) element;
 		Attributes attributes = searchResult.getAttributes();
-		String commonName = (String) attributes.get("cn").get();
-		String simpleName = (String) attributes.get("sn").get();
+		String commonName = getStringAttribute(attributes, "cn");
+		String simpleName = getStringAttribute(attributes, "sn");
 		return new Person(commonName, simpleName);
+	}
+
+	private String getStringAttribute(Attributes attributes, String attributeName) {
+		try {
+			return (String) attributes.get(attributeName).get();
+		} catch (Exception e) {
+			LOG.error(e.getMessage(), e);
+			throw new IllegalArgumentException("Unable to get attribute " + attributeName, e);
+		}
 	}
 
 }
